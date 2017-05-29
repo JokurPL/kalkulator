@@ -1,5 +1,5 @@
 <?php include('head.php'); ?>
-<body>
+<body style="background: #F1F1F1">
 <div class="container">
 	<div class="row">
 		<h1>Kalkulator</h1>
@@ -25,6 +25,7 @@
 			    <option>Podziel</option>
 			    <option>Pomnóż</option>
 			    <option>Potęguj</option>
+			    <option>Pierwiastek</option>
 			  </select>
 			</div>
 		</div>
@@ -34,9 +35,52 @@
 		</div>
 
 	</form>
+	<div class="row">
+		<div class="page-header">
+	  		<h1>Opis funkcji:</h1>
+	  		<div>
+	  			<blockquote class="bg-success">
+	  				<h3><strong>Dodaj</strong></h3>
+	  				<p>Dodaje 1 liczbę do 2 np. <code>2 + 2 = 4</code></p>
+	  			</blockquote>
+	  		</div>
+	  		<div>
+	  			<blockquote class="bg-info">
+	  				<h3><strong>Odejmij</strong></h3>
+	  				<p>Odejmuję 1 liczbę od 2 np. <code>2 - 2 = 0</code></p>
+	  			</blockquote>
+	  		</div>
+	  		<div>
+	  			<blockquote class="bg-success">
+	  				<h3><strong>Podziel</strong></h3>
+	  				<p>Dzieli 1 liczbę przez 2 np. <code>2 : 2 = 1</code></p>
+	  			</blockquote>
+	  		</div>
+	  		<div>
+	  			<blockquote class="bg-info">
+	  				<h3><strong>Pomnóż</strong></h3>
+	  				<p>Mnoży 1 liczbę przez 2 np. <code>2 x 2 = 4</code></p>
+	  			</blockquote>
+	  		</div>
+	  		<div>
+	  			<blockquote class="bg-success">
+	  				<h3><strong>Potęguj</strong></h3>
+	  					<p>Podnosi 1 liczbę do potęgi podanej jako 2 liczba np. <code>2^2 = 4</code></p>
+	  			</blockquote>
+	  		</div>
+	  		<div>
+	  			<blockquote class="bg-info">
+	  				<h3><strong>Pierwiastkowanie</strong></h3>
+	  					<p>Zwraca pierwiastek kwadratowy 1 i 2 liczby np. <code>144 = √<?php echo sqrt(144); ?> | 9 = √<?php echo sqrt(9); ?> </code></p>
+	  			</blockquote>
+	  		</div>
+		</div>
+	</div>
+
+	<h3>Zobacz kod - <a href="https://github.com/JokurPL/kalkulator" target="_blank">GitHub</a></h3>
 	<hr>
-	&copy; <?php echo date('Y'); ?> by Mateusz Pietrzak 
+	&copy; <?php echo date('Y'); ?> by Mateusz Pietrzak  
 </div>
-<?php include('body.php'); ?>
+<?php include('body.php'); ?> 
 </body>
 </html>
