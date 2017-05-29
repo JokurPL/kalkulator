@@ -1,12 +1,12 @@
 <?php  
 	function Dodaj($fnum, $snum) {
 		$suma = $fnum + $snum;
-		return '<h3>Wynik <strong>dodawania</strong> wyniósł:</h3> <h1>' . $suma . '</h1>';
+		return '<h3>Wynik <strong>dodawania</strong> wyniósł:</h3> <h1>'. $fnum . ' + ' . $snum . ' = ' .$suma . '</h1>';
 	}
 
 	function Odejmij($fnum, $snum) {
 		$suma = $fnum - $snum;
-		return '<h3>Wynik <strong>odejmowania</strong> wyniósł:</h3> <h1>' . $suma . '</h1>';
+		return '<h3>Wynik <strong>odejmowania</strong> wyniósł:</h3> <h1>' . $fnum . ' - '. $snum . ' = ' . $suma . '</h1>';
 	}
 
 	function Podziel($fnum, $snum) {
@@ -15,13 +15,13 @@
 		}
 		else {
 		$suma = $fnum / $snum;
-		return '<h3>Wynik <strong>dzielenia</strong> wyniósł:</h3> <h1>' . $suma . '</h1>';
+		return '<h3>Wynik <strong>dzielenia</strong> wyniósł:</h3> <h1>'. $fnum . ' : ' . $snum . ' = ' . $suma . '</h1>';
 	}
 	}
 
 	function Pomnoz($fnum, $snum) {
 		$suma = $fnum * $snum;
-		return '<h3>Wynik <strong>mnożenia</strong> wyniósł:</h3> <h1>' . $suma . '</h1>';
+		return '<h3>Wynik <strong>mnożenia</strong> wyniósł:</h3> <h1>' . $fnum . ' × ' . $snum . ' = ' . $suma . '</h1>';
 	}
 
 	function Poteguj($fnum, $snum) {
@@ -30,6 +30,13 @@
 		}
 		else {
 		$suma = pow($fnum, $snum);
-		return '<h3>Wynik <strong>potęgowania</strong> wyniósł:</h3> <h1>' . $suma . '</h1>';
+		return '<h3>Wynik <strong>potęgowania</strong> wyniósł:</h3> <h1>'. $fnum . '^' . $snum . ' = ' . $suma . '</h1>';
 	}
+	}
+
+	function Pierwiastek($fnum, $snum) {
+		$pierwiastek1 = sqrt($fnum);
+		$pierwiastek2 = sqrt($snum);
+
+		return '<h3>Wynik <strong>pierwiastkowania</strong> wyniósł:</h3> <h1>'. '√' . $fnum . ' = ' . $pierwiastek1 . '<br>' . '√' . $snum . ' = ' .  $pierwiastek2 . '</h1>';
 	}
