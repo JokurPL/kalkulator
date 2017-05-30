@@ -30,12 +30,14 @@
 	else if ($fun == 'Potęguj') {
 		echo Poteguj($fnum, $snum);
 	}
+	else if ($fun == 'Pierwiastek') {
+		echo Pierwiastek($fnum, $snum);
+	}
 }
 
  ?>
  	<div class="input-group">
  		<a href="index.php" class="btn btn-lg btn-danger">Powrót</a>
- 	</div>
- </div>
+ 	</div><hr>
  </body>
  <?php include('body.php'); ?>

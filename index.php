@@ -56,6 +56,11 @@
 	</form>
 
 	<div class="row">
+		<h1 class="text-primary">Quiz wzorów!<hr></h1>
+		<p><a href="quiz.php" class="btn btn-lg btn-warning">Sprawdź siebie!</a></p>
+	</div>
+
+	<div class="row">
 		<div class="page-header">
 	  		<h1>Opis funkcji:</h1>
 	  		<div>
