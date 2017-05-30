@@ -71,3 +71,9 @@
 
 		return '<h3>Twój los to: <strong>' . $los . '</strong>!</h3>';
 	}
+
+	function Los($a, $b) {
+		$los = rand($a, $b);
+
+		return '<h3>Twój los to: <strong>' . $los . '</strong>!</h3>';
+	}
