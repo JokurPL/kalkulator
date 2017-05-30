@@ -1,5 +1,5 @@
 <?php include('head.php'); ?>
-<body style="background: #F1F1F1">
+<body>
 <div class="container">
 	<div class="row">
 		<h1>Kalkulator</h1>
@@ -8,12 +8,12 @@
 	<form class="form" action="licz.php" method="post">
 		<div class="input-group">
 		  <span class="input-group-addon" id="basic-addon1">Podaj 1 liczbę</span>
-		  <input type="number" name="fnum" class="form-control" id="basic-url" aria-describedby="basic-addon1">
+		  <input type="number" name="fnum" placeholder="Przeczytaj opisy funkcji" class="form-control" id="basic-url" aria-describedby="basic-addon1">
 		</div>
 		<br>
 		<div class="input-group">
 		  <span class="input-group-addon" id="basic-addon2">Podaj 2 liczbę</span>
-		  <input type="number" placeholder="Jeśli wybrałeś opcję Potęgowania wpisz wartość do potęgowania np. 3" name="snum" class="form-control" id="basic-url" aria-describedby="basic-addon2">
+		  <input type="number" placeholder="Przeczytaj opisy funkcji" name="snum" class="form-control" id="basic-url" aria-describedby="basic-addon2">
 		</div>
 		<br>
 		<div class="input-group">
@@ -35,6 +35,26 @@
 		</div>
 
 	</form>
+	<div class="row">
+			<h1>Losowanie:</h1>
+	<hr>
+	</div>
+	<form action="los.php" method="post">	
+		<div class="input-group">
+		  <span class="input-group-addon" id="basic-addon2">Podaj liczbę od, której chcesz zacząć losować</span>
+		  <input type="number" name="flos" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+		</div>
+		<br>	
+		<div class="input-group">
+		  <span class="input-group-addon" id="basic-addon2">Podaj liczbę do, której chcesz losować </span>
+		  <input type="number" name="slos" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+		</div>
+		<br>
+		<div class="input-group">
+			<input class="btn btn-lg btn-success" value="Losuj" type="submit">
+		</div>
+	</form>
+
 	<div class="row">
 		<div class="page-header">
 	  		<h1>Opis funkcji:</h1>
@@ -71,7 +91,7 @@
 	  		<div>
 	  			<blockquote class="bg-info">
 	  				<h3><strong>Pierwiastkowanie</strong></h3>
-	  					<p>Zwraca pierwiastek kwadratowy 1 i 2 liczby np. <code>144 = √<?php echo sqrt(144); ?> | 9 = √<?php echo sqrt(9); ?> </code></p>
+	  					<p>Zwraca pierwiastek stopnia tego, którego podano w drugim polu np. <code>Pierwiastek stopnia kwadratowego (2) | 144 = √<?php echo sqrt(144); ?> </code></p>
 	  			</blockquote>
 	  		</div>
 		</div>
@@ -79,8 +99,6 @@
 
 	<h3>Zobacz kod - <a href="https://github.com/JokurPL/kalkulator" target="_blank">GitHub</a></h3>
 	<hr>
-	&copy; <?php echo date('Y'); ?> by Mateusz Pietrzak  
-</div>
 <?php include('body.php'); ?> 
 </body>
 </html>
