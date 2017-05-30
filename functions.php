@@ -35,8 +35,39 @@
 	}
 
 	function Pierwiastek($fnum, $snum) {
-		$pierwiastek1 = sqrt($fnum);
-		$pierwiastek2 = sqrt($snum);
+		if ($snum > 6) {
+			$tekst = '<h1 class="text-danger">Za duży stopień pierwiastka (max. 6)!</h1>';
+		}
+		else if ($snum == 2) {
+			$p = '2 stopnia';
+			$suma = sqrt($fnum);
+			$tekst = '<h3>Wynik <strong>pierwiastkowania ' . $p . '</strong> wyniósł:</h3> <h1>'. '√' . $fnum . ' = ' . $suma . '</h1>';
+		}
+		else if ($snum == 3) {
+			$p = '3 stopnia';
+			$suma = pow($fnum,1/3);
+			$tekst = '<h3>Wynik <strong>pierwiastkowania ' . $p . '</strong> wyniósł:</h3> <h1>'. '√' . $fnum . ' = ' . $suma . '</h1>';
+		}
+		else if ($snum == 4) {
+			$p = '4 stopnia';
+			$suma = pow($fnum,1/4);
+			$tekst = '<h3>Wynik <strong>pierwiastkowania ' . $p . '</strong> wyniósł:</h3> <h1>'. '√' . $fnum . ' = ' . $suma . '</h1>';
+		}
+		else if ($snum == 5) {
+			$p = '5 stopnia';
+			$suma = pow($fnum, 1/5);
+			$tekst = '<h3>Wynik <strong>pierwiastkowania ' . $p . '</strong> wyniósł:</h3> <h1>'. '√' . $fnum . ' = ' . $suma . '</h1>';
+		}
+		else if ($snum == 6) {
+			$p = '6 stopnia';
+			$suma = pow($fnum, 1/6);
+			$tekst = '<h3>Wynik <strong>pierwiastkowania ' . $p . '</strong> wyniósł:</h3> <h1>'. '√' . $fnum . ' = ' . $suma . '</h1>';
+		}
+		return $tekst;
+	}
 
-		return '<h3>Wynik <strong>pierwiastkowania</strong> wyniósł:</h3> <h1>'. '√' . $fnum . ' = ' . $pierwiastek1 . '<br>' . '√' . $snum . ' = ' .  $pierwiastek2 . '</h1>';
+	function Los($a, $b) {
+		$los = rand($a, $b);
+
+		return '<h3>Twój los to: <strong>' . $los . '</strong>!</h3>';
 	}
