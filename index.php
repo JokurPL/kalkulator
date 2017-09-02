@@ -1,8 +1,15 @@
-<?php include('head.php'); ?>
+<?php include('head.php'); 
+
+	include('db.php');
+
+	$news = $pdo->query('SELECT * FROM `news` ORDER BY `news`.`id` DESC');
+	$com = $pdo->query('SELECT * FROM `com` ORDER BY `com`.`id` DESC');
+	$icom = $pdo->query( 'SELECT COUNT( id ) as cnt FROM com' )->fetch()['cnt'];
+?>
 <body>
 <div class="container">
 	<div class="row">
-		<h1>Kalkulator</h1>
+		<h1>Kalkulator <a href="admin.php" class="btn btn-sm btn-primary">Panel Administratora</a></h1>
 		<hr>
 	</div>
 	<form class="form" action="licz.php" method="post">
@@ -102,6 +109,50 @@
 		</div>
 	</div>
 
+	<div class="row">
+		<h1>Aktualności <hr></h1>
+		<?php foreach ($news->fetchAll() as $value) : ?>
+			<div class="jumbotron">
+			  <h1>Aktualizacja: <span class="text-primary"><?php echo $value['nr']; ?></span></h1>
+			  <p><?php echo $value['tresc']; ?></p>
+			</div>
+	
+	<?php endforeach; ?>
+	<div class="media">
+		<h1>Komentarze <hr></h1>
+		<?php 
+		if ($icom > 0) {
+		foreach ($com->fetchAll() as $value) {
+				echo '	
+				<div class="media-body">
+    				<h3>Autor: <strong>'. $value['autor'] .'</strong></h3>
+   					<p style="font-size: 22px;">'. $value['tresc'] .'</p>
+  				</div>
+  				<hr>';
+			} 
+		} else {
+			echo '<h2 class="text-danger">Brak komentarzy.<hr></h2>';
+		}
+		?>
+		</div>
+		<div class="media">
+			<h2>Dodaj komentarz <hr></h2>
+			<form method="post" action="addcom.php">
+				<div class="input-group">
+					<label style="font-size: 18px;" for="autor">Autor:</label>
+					<input name="autor" type="text" id="autor" class="form-control">
+				</div><br>
+				<div class="input-group">
+					<label style="font-size: 18px;" >Treść komentarza:</label>
+					<textarea name="tresc" type="text" style="max-width: 290px; min-height:200px;" id="autor" class="form-control"></textarea>
+				</div><br>
+				<div class="input-group">
+						<button class="btn btn-primary">Dodaj komentarz</button>
+				</div>
+			</form>
+		</div>
+  	</div>
+	<hr>
 	<h3>Zobacz kod - <a href="https://github.com/JokurPL/kalkulator" target="_blank">GitHub</a></h3>
 	<hr>
 <?php include('body.php'); ?> 
